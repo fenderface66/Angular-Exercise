@@ -7,31 +7,33 @@
  */
 ;(function() {
 
-  angular
-    .module('boilerplate')
-    .controller('MainController', MainController);
+	angular
+		.module('app-task')
+		.controller('MainController', MainController);
 
-  MainController.$inject = ['LocalStorage', 'QueryService'];
-
-
-  function MainController(LocalStorage, QueryService) {
-
-    // 'controller as' syntax
-    var self = this;
+	MainController.$inject = ['LocalStorage', 'FlickrData', '$scope'];
 
 
-    ////////////  function definitions
+	function MainController(LocalStorage, FlickrData, $scope) {
+		var self = this; 
+		////////////  function definitions
+		var request = {
+			tags: "potato",
+			tagmode: "all",
+			format: "json",
+			jsoncallback: "JSON_CALLBACK"
+		}
+		$scope.items = [];
+		FlickrData.query('JSONP', '/services/feeds/photos_public.gne', request, {})
+			.then(function(obj) {
+			$scope.obj = obj.data;
+			angular.forEach($scope.obj.items, function(value) {
+				this.push(value);
+			}, $scope.items);
 
 
-    /**
-     * Load some data
-     * @return {Object} Returned object
-     */
-    // QueryService.query('GET', 'posts', {}, {})
-    //   .then(function(ovocie) {
-    //     self.ovocie = ovocie.data;
-    //   });
-  }
 
-
+			console.log($scope.items);
+		})
+	}
 })();

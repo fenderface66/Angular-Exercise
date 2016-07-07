@@ -205,7 +205,7 @@ gulp.task('templates', function() {
     ])
     .pipe($.minifyHtml())
     .pipe($.angularTemplatecache({
-      module: 'boilerplate'
+      module: 'app-task'
     }))
     .pipe(gulp.dest('_build/js'));
 });
@@ -244,19 +244,6 @@ gulp.task('default', ['browser-sync', 'sass', 'minify-css'], function() {
   gulp.watch('styles/**/*.scss', ['sass', 'minify-css']);
 });
 
-
-/**
- * build task:
- * 1. clean /_build folder
- * 2. compile SASS files, minify and uncss compiled css
- * 3. copy and minimize images
- * 4. minify and copy all HTML files into $templateCache
- * 5. build index.html
- * 6. minify and copy all JS files
- * 7. copy fonts
- * 8. show build folder size
- * 
- */
 gulp.task('build', function(callback) {
   runSequence(
     'clean:build',

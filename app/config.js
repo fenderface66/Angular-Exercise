@@ -9,9 +9,9 @@
 	 * CONSTANTS.API_URL
 	 */
   angular
-  	.module('boilerplate')
+  	.module('app-task')
     .constant('CONSTANTS', {
-      'API_URL': 'http://www.yourAPIurl.com/'
+      'API_URL': 'https://api.flickr.com/'
     });
 
 

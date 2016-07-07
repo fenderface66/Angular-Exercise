@@ -1,8 +1,8 @@
 {
-  "name": "AngularJS Boilerplate",
-  "version": "1.1.7",
+  "name": "app-task",
+  "version": "1.1.1",
   "authors": [
-    "jozef butko <jbutko@gmail.com> / jozefbutko.com/resume"
+    "Robbie Heygate <r.heygate@gmail.com> / rglheygate.com"
   ],
   "description": "Description goes here",
   "main": "app.js",
