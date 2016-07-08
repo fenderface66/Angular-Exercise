@@ -10,7 +10,7 @@
    * <responsive-nav></responsive-nav>
    *
    * Example in main-nav.html file
-   * 
+   *
    */
   angular.module('app-task')
     .directive('responsiveNav', responsiveNav);

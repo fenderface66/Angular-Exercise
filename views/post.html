@@ -1,0 +1,31 @@
+<div class="feed-container">
+  {{items[post]}}
+
+    <div class="item-container" ng-model="items[post]">
+
+
+            <div class="info-container">
+                <h1><a target="_blank" href={{value.link}}>{{items[post].title}}</a></h1>
+                <ul>
+                    <li><a href="">{{items[post].author}}</a></li>
+                    <li>Published: {{ items[post].date_taken | date:'d' | ordinal}} {{ items[post].date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
+                    <!-- <p>Date = {{ "2016-01-05T09:05:05.035Z" | date }}</p> -->
+                </ul>
+            </div>
+            <div class="content-container">
+                <div class="image-container">
+                    <img src={{items[post].media.m}} alt="">
+                </div>
+            </div>
+            <h3>Tags</h3>
+            <div class="tag-container">
+                <p>Tags</p>
+                <ul>
+                    <li ng-repeat="tag in value.tags">
+                        <a href="https://www.flickr.com/photos/tags/{{tag}}">{{tag}}</a>
+                    </li>
+                </ul>
+            </div>
+
+    </div>
+</div>

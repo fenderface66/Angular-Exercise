@@ -1,39 +1,36 @@
-/**
- * Main application controller
- *
- * You can use this controller for your whole app if it is small
- * or you can have separate controllers for each logical section
- * 
- */
-;(function() {
+;
+(function() {
 
-	angular
-		.module('app-task')
-		.controller('MainController', MainController);
+    angular
+        .module('app-task')
+        .controller('MainController', MainController);
 
-	MainController.$inject = ['LocalStorage', 'FlickrData', '$scope'];
+    MainController.$inject = ['LocalStorage', 'FlickrData', '$scope', '$location', '$rootScope'];
 
 
-	function MainController(LocalStorage, FlickrData, $scope) {
-		var self = this; 
-		////////////  function definitions
-		var request = {
-			tags: "potato",
-			tagmode: "all",
-			format: "json",
-			jsoncallback: "JSON_CALLBACK"
-		}
-		$scope.items = [];
-		FlickrData.query('JSONP', '/services/feeds/photos_public.gne', request, {})
-			.then(function(obj) {
-			$scope.obj = obj.data;
-			angular.forEach($scope.obj.items, function(value) {
-				this.push(value);
-			}, $scope.items);
+    function MainController(LocalStorage, FlickrData, $scope, $location, $rootScope) {
+        var self = this;
+        ////////////  function definitions
+        var request = {
+            tags: "potato",
+            tagmode: "all",
+            format: "json",
+            jsoncallback: "JSON_CALLBACK"
+        }
+        $scope.items = [];
+				$scope.post =  $location.hash();
+				console.log($scope.post);
+        FlickrData.query('JSONP', '/services/feeds/photos_public.gne', request, {})
+            .then(function(obj) {
+                $scope.obj = obj.data;
+                console.log($scope.obj);
+                angular.forEach($scope.obj.items, function(value) {
+                    value.tags = value.tags.split(" ");
+                    this.push(value);
+                }, $scope.items);
+
+            })
 
 
-
-			console.log($scope.items);
-		})
-	}
+    }
 })();

@@ -1,10 +1,11 @@
-;(function() {
+;
+(function() {
 
 
-	'use strict';
+    'use strict';
 
 
-	/**
+    /**
    * $http service abstraction to make API calls with any HTTP method,
    * custom url and data object to be sent as request.
    * Every REST API call is measured, you can see how much it took
@@ -33,56 +34,61 @@
    */
 
 
-	angular
-		.module('app-task')
-		.factory('FlickrData', [
-		'$http', '$q', 'CONSTANTS', FlickrData
-	]);
+    angular
+        .module('app-task')
+        .factory('FlickrData', [
+            '$http', '$q', 'CONSTANTS', FlickrData
+        ]);
 
 
 
-	//////////////// factory
+    //////////////// factory
 
 
 
-	function FlickrData($http, $q, CONSTANTS, $scope) {
+    function FlickrData($http, $q, CONSTANTS, $scope, $filter) {
 
 
-		var service = {
-			query: query
-		};
+        var service = {
+            query: query
+            // dateHandler: dateHandler
+        };
 
-		return service;
-
-
-		//////////////// definition
+        return service;
 
 
-		function query(method, url, params, data) {
+        //////////////// definition
 
 
-			      var deferred = $q.defer();
-			
-			      $http({
-			        method: method,
-			        url: CONSTANTS.API_URL + url,
-			        params: params,
-			        data: data
-			      }).then(function(data) {
-							console.log(data);
-				
-			        if (!data.config) {
-			          console.log('Server error occured.');
-			        }
-			        deferred.resolve(data);
-			      }, function(error) {
-			        deferred.reject(error);
-			      });
-							
-			      return deferred.promise;
-			    }
-
-		}
+        function query(method, url, params, data) {
 
 
-	})();
+            var deferred = $q.defer();
+
+            $http({
+                method: method,
+                url: CONSTANTS.API_URL + url,
+                params: params,
+                data: data
+            }).then(function(data) {
+                console.log(data);
+
+                if (!data.config) {
+                    console.log('Server error occured.');
+                }
+                deferred.resolve(data);
+            }, function(error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        }
+
+        function dateHandler(date) {
+
+        }
+
+    }
+
+
+})();
