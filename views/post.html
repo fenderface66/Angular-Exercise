@@ -1,15 +1,12 @@
 <div class="feed-container">
-  {{items[post]}}
-
     <div class="item-container" ng-model="items[post]">
-
+          <a href="/#/">Back</a>
 
             <div class="info-container">
                 <h1><a target="_blank" href={{value.link}}>{{items[post].title}}</a></h1>
                 <ul>
                     <li><a href="">{{items[post].author}}</a></li>
-                    <li>Published: {{ items[post].date_taken | date:'d' | ordinal}} {{ items[post].date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
-                    <!-- <p>Date = {{ "2016-01-05T09:05:05.035Z" | date }}</p> -->
+                    <li>Published: {{items[post].date_taken | date:'d' | ordinal}} {{ items[post].date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
                 </ul>
             </div>
             <div class="content-container">
@@ -21,7 +18,7 @@
             <div class="tag-container">
                 <p>Tags</p>
                 <ul>
-                    <li ng-repeat="tag in value.tags">
+                    <li ng-repeat="tag in items[post].tags">
                         <a href="https://www.flickr.com/photos/tags/{{tag}}">{{tag}}</a>
                     </li>
                 </ul>
