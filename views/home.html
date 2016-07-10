@@ -5,12 +5,13 @@
 	<form>
 		<input placeholder="Search by tags..." ng-keydown="loadMore(true)" ng-keyup="shouldFilter = true"  ng-model="search" type="search">
 	</form>
+
 </div>
 
 <div class="feed-container" scroll>
 	<div class="item-container animation" ng-repeat="(key, value) in items | filter: (shouldFilter ?  {tagString : search} : '')">
 		<div class="image-container">
-			<a href="/#/post/#{{key}}"><img src={{value.media.m}} alt=""></a>
+			<a href="/#/post/#{{key}}"><img src={{value.media.m}} alt="{{value.title}}"></a>
 		</div>
 		<div class="info-container">
 			<h2><a ng-click="$window.scrollTo(0, 0);" class="title-link" href=/#/post/#{{key}}>{{value.title}}</a></h2>

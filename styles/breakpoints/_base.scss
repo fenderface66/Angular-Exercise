@@ -235,6 +235,10 @@ Flickr Feed
 			display: inline-block;
 			margin: 4px 5px;
 		}
+
+		a {
+			text-decoration: underline;;
+		}
 	}
 	.info-top {
 		position: relative;
@@ -254,6 +258,10 @@ Flickr Feed
 			background-color: #d7d9de;
 		}
 	}
+}
+
+.g-plusone {
+	clear: both;
 }
 /*********************
 FOOTER STYLES

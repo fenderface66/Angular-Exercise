@@ -3,7 +3,7 @@
 
         <div class="info-container">
           <div class="info-top">
-            <h1><a target="_blank" href={{loadingBay[post]}}>{{loadingBay[post].title}}</a></h1>
+            <h1><a target="_blank" href={{loadingBay[post].link}}>{{loadingBay[post].title}}</a></h1>
             <a class="back" href="/#/">Back</a>
           </div>
             <ul>
@@ -13,13 +13,14 @@
         </div>
         <div class="content-container">
             <div class="image-container">
-                <img src={{loadingBay[post].media.m}} alt="">
+                <a target="_blank" href={{loadingBay[post].link}}><img src={{loadingBay[post].media.m}} alt="{{loadingBay[post].title}}"></a>
             </div>
             <div class="text-container">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lorem vitae ligula luctus dapibus sed ut odio. In suscipit turpis eget erat rhoncus, vitae imperdiet diam dignissim. Vivamus eu nibh non erat dignissim dignissim non ultricies felis. Aliquam
                     auctor ipsum arcu, mollis imperdiet enim lacinia ac. Quisque et neque mattis, commodo dui non, commodo odio.
                 </p>
+
             </div>
         </div>
 
@@ -31,6 +32,6 @@
                 </li>
             </ul>
         </div>
-        <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+          <div class="g-plusone" data-annotation="inline" data-width="300"></div>
     </div>
 </div>

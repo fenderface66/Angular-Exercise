@@ -1,7 +1,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 img,legend{border:0}
 legend,td,th{padding:0}
-.cf:after,.footer{clear:both}
+.cf:after,.footer,.g-plusone{clear:both}
 .container,sub,sup{position:relative}
 .come-down,.come-in,.come-left,.come-right{animation:come-in .8s ease forwards;visibility:visible!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
@@ -53,7 +53,6 @@ strong{font-weight:600}
 .image-responsive{max-width:100%;height:auto}
 .pull-left{float:left}
 .pull-right{float:right}
-.container .feed-container .image-container,.container .feed-container .info-container,.container .image-container,.container .info-container{float:none}
 .hw{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000;-moz-perspective:1000;-ms-perspective:1000;perspective:1000}
 .last{margin-right:0!important}
 .ir{background-color:transparent;border:0}
@@ -103,41 +102,29 @@ p{-ms-word-wrap:break-word;word-break:break-word;word-wrap:break-word;-webkit-hy
 .fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .animated{-webkit-animation-duration:1.2s;animation-duration:1.2s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .field,input[type=month],input[type=time],input[type=week],input[type=number],input[type=email],input[type=url],input[type=search],input[type=tel],input[type=color],input[type=text],input[type=password],input[type=datetime],input[type=datetime-local],input[type=date],select,textarea{display:block;height:40px;line-height:40px;padding:0 12px;margin-bottom:14px;font-size:1em;color:#5c6b80;border-radius:3px;vertical-align:middle;box-shadow:none;border:0;width:80%;max-width:400px;font-family:"Open Sans",Helvetica,Arial,sans-serif;background-color:#fff;-webkit-transition:background-color .24s ease-in-out;transition:background-color .24s ease-in-out}
-#inner-header ul,ul{list-style-type:none;padding:0}
 .field:active,.field:focus,input[type=month]:active,input[type=month]:focus,input[type=time]:active,input[type=time]:focus,input[type=week]:active,input[type=week]:focus,input[type=number]:active,input[type=number]:focus,input[type=email]:active,input[type=email]:focus,input[type=url]:active,input[type=url]:focus,input[type=search]:active,input[type=search]:focus,input[type=tel]:active,input[type=tel]:focus,input[type=color]:active,input[type=color]:focus,input[type=text]:active,input[type=text]:focus,input[type=password]:active,input[type=password]:focus,input[type=datetime]:active,input[type=datetime]:focus,input[type=datetime-local]:active,input[type=datetime-local]:focus,input[type=date]:active,input[type=date]:focus,select:active,select:focus,textarea:active,textarea:focus{background-color:#f7f8fa;outline:0}
 body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;background-color:#f8f9fa;color:#5c6b80;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:100%;line-height:1.5}
 html{height:100%;box-sizing:border-box}
 *,:after,:before{box-sizing:inherit}
-ul{margin:0}
+ul{list-style-type:none;margin:0;padding:0}
 .wrap{width:96%;margin:0 auto}
 a,a:visited{color:#231f20;text-decoration:none}
 a:focus,a:hover,a:visited:focus,a:visited:hover{color:#0b090a;text-decoration:underline}
-.h1 a,.h2 a,.h3 a,.h4 a,.h5 a,.hamburger:focus,.hamburger:hover,.main-nav li a,h1 a,h2 a,h3 a,h4 a,h5 a{text-decoration:none}
 a:link,a:visited:link{-webkit-tap-highlight-color:rgba(0,0,0,.3)}
 .h1,.h2,.h3,.h4,.h5,h1,h2,h3,h4,h5{text-rendering:optimizelegibility;font-weight:500}
+.h1 a,.h2 a,.h3 a,.h4 a,.h5 a,h1 a,h2 a,h3 a,h4 a,h5 a{text-decoration:none}
 .h1,h1{font-size:2.5em;line-height:1.333em}
 .h2,h2{font-size:1.75em;line-height:1.4em;margin-bottom:.375em}
 .h3,h3{font-size:1.75rem}
 .h4,h4{font-size:.875rem;font-weight:700}
-.header{background-color:#fff}
-#inner-header{width:100%;padding:0 50px;text-align:center}
-#inner-header a{font-size:14px;color:#231f20}
-#inner-header ul{margin:0}
-#inner-header li{display:inline-block;margin-right:50px;line-height:50px}
-#inner-header li:last-child{margin-right:0}
-#logo{margin:.75em 0;display:none}
-#logo a{color:#fff}
-.main-nav{border-bottom:0;margin:0;display:none}
-.main-nav li a{display:block;color:#fff;padding:.75em}
-.hamburger:before{content:'\2261';font-size:24px;font-weight:700;color:#555}
-.responsive-wrapper{display:none}
-.responsive-wrapper a{display:block;width:100%;line-height:2;text-align:center;background:#fff;color:#5c6b80}
 .container{text-align:center;margin:0 auto}
 .container .top-container{position:fixed;background-color:#eaedf2;width:100%;left:0;z-index:99999;padding:10px 0 14px}
 .container .top-container h1{margin-top:0;margin-bottom:10px;font-size:1.4rem}
 .container .title-container{padding:0 10px}
 .container input[ng-model=search]{margin:0 auto}
+.container .image-container,.container .info-container{float:none}
 .container .feed-container{padding:108px 5px 40px;margin:0 auto}
+.container .feed-container .image-container,.container .feed-container .info-container{float:none}
 .container .feed-container .image-container{margin:auto;width:80%}
 .container .feed-container .info-container{text-align:center;width:100%}
 .container .item-container{margin:30px 5px;padding-bottom:30px;overflow-x:hidden;border-bottom:1px solid #5c6b80}
@@ -177,18 +164,12 @@ a:link,a:visited:link{-webkit-tap-highlight-color:rgba(0,0,0,.3)}
 .container .post-container .info-container ul li:first-child{border-right:1px solid #5c6b80;padding-right:8px}
 .container .post-container .info-container ul li:last-child{padding-left:4px}
 .container .post-container .image-container{width:50%;float:left}
-.container .post-container .tag-container h3{margin-top:0}
 }
 @media only screen and (min-width:768px){body{font-family:"Open Sans",Helvetica,Arial,sans-serif}
 .container{width:760px}
-.header a{font-weight:700}
-#logo{margin:0;line-height:1}
-.nav{border:0}
-.nav ul{background:#231f20;margin-top:0}
-.nav li{position:relative}
-.nav li a{border-bottom:0}
-.nav li a:focus,.nav li a:hover{color:#fff;text-decoration:underline}
+.container .feed-container{padding:142px 5px 40px}
 .container .post-container .image-container{margin-right:2%}
+.container .top-container h1{font-size:2.2rem}
 }
 @media only screen and (min-width:1030px){.container{width:1040px;margin:0 auto}
 #inner-header{width:1000px}
