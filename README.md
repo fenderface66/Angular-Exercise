@@ -6,7 +6,7 @@ npm install
 
 2) To create build directory run
 ```bash
-
+gulp build
 ```
 3) To begin gulp development process run
 ```bash
