@@ -11,27 +11,15 @@
 // typography
 @import "partials/typography";
 
-// Sass functions
-@import "partials/functions";
-
 // import mixins
 @import "partials/mixins";
-
-// the grid
-@import "partials/grid";
 
 /*********************
 IMPORTING MODULES
 *********************/
 
-// alert boxes
+// animations
 @import "modules/animations";
-
-// alert boxes
-@import "modules/alerts";
-
-// buttons
-@import "modules/buttons";
 
 // forms (inputs & labels)
 @import "modules/forms";
@@ -94,13 +82,3 @@ RETINA (2x RESOLUTION DEVICES)
 // 	@import "breakpoints/2x";
 
 // } // end of media query
-
-/*********************
-PRINT STYLESHEET
-*********************/
-@media print {
-
-	// styles in print.scss
-	@import "partials/print";
-
-}

@@ -5,10 +5,10 @@
         .module('app-task')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['LocalStorage', 'FlickrData', '$scope', '$location', '$rootScope'];
+    MainController.$inject = ['LocalStorage', 'FlickrData', '$scope', '$location', '$window'];
 
 
-    function MainController(LocalStorage, FlickrData, $scope, $location, $rootScope) {
+    function MainController(LocalStorage, FlickrData, $scope, $location, $window) {
         var self = this;
         ////////////  function definitions
         var request = {
@@ -33,24 +33,40 @@
                     value.tagString = value.tags;
                     $scope.tags.push(value.tags.split(" "));
                     value.tags = value.tags.split(" ");
-
+                    value.author = value.author.split("(");
+                    value.author[1] = value.author[1].split(")");
+                    value.author[1] = value.author[1][0];
                     this.push(value);
                 }, $scope.loadingBay);
 
             })
-
-        $scope.loadMore = function loadMore() {
+        $scope.filtered = false;
+        $scope.loadMore = function loadMore(all) {
             var counter = 0;
-            angular.forEach($scope.loadingBay, function(value, key) {
-                counter++;
-                if (key === $scope.items.length && counter < 2) {
-                    this.push(value);
-                    $scope.$apply();
-                } else {
-                    counter = 0;
-                }
-            }, $scope.items);
+            if (all === true && $scope.filtered === false || all !== true) {
+                angular.forEach($scope.loadingBay, function(value, key) {
+                    counter++;
+                    if (all !== true && $scope.filtered === false) {
+                        if (key === $scope.items.length && counter < 2) {
+                            this.push(value);
+                            $scope.$apply();
+                        } else {
+                            counter = 0;
+                        }
+                    } else if (all === true) {
+                        console.log('hello');
+                        if (key === $scope.items.length + 1) {
+                            console.log('bye');
+                            this.push(value);
+                            $scope.filtered = true;
+                        }
+                    }
+
+
+                }, $scope.items);
+            }
         }
+
 
 
 

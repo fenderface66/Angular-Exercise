@@ -1,27 +1,36 @@
-<div class="feed-container fadeIn animated">
+<div class="post-container fadeIn animated">
     <div class="item-container animation" ng-model="loadingBay[post]" ng-show>
-          <a class="back" href="/#/">Back</a>
-            <div class="info-container">
-                <h1><a target="_blank" href={{value.lin}}>{{loadingBay[post].title}}</a></h1>
-                <ul>
-                    <li><a href="">{{loadingBay[post].author}}</a></li>
-                    <li>Published: {{loadingBay[post].date_taken | date:'d' | ordinal}} {{ loadingBay[post].date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
-                </ul>
+
+        <div class="info-container">
+          <div class="info-top">
+            <h1><a target="_blank" href={{loadingBay[post]}}>{{loadingBay[post].title}}</a></h1>
+            <a class="back" href="/#/">Back</a>
+          </div>
+            <ul>
+                <li><a href="https://www.flickr.com/photos/{{loadingBay[post].author_id}}" target="_blank">{{loadingBay[post].author[1]}}</a></li>
+                <li>Published: {{loadingBay[post].date_taken | date:'d' | ordinal}} {{ loadingBay[post].date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
+            </ul>
+        </div>
+        <div class="content-container">
+            <div class="image-container">
+                <img src={{loadingBay[post].media.m}} alt="">
             </div>
-            <div class="content-container">
-                <div class="image-container">
-                    <img src={{loadingBay[post].media.m}} alt="">
-                </div>
+            <div class="text-container">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel lorem vitae ligula luctus dapibus sed ut odio. In suscipit turpis eget erat rhoncus, vitae imperdiet diam dignissim. Vivamus eu nibh non erat dignissim dignissim non ultricies felis. Aliquam
+                    auctor ipsum arcu, mollis imperdiet enim lacinia ac. Quisque et neque mattis, commodo dui non, commodo odio.
+                </p>
             </div>
-            <h3>Tags</h3>
-            <div class="tag-container">
-                <p>Tags</p>
-                <ul>
-                    <li ng-repeat="tag in loadingBay[post].tags">
-                        <a href="https://www.flickr.com/photos/tags/{{tag}}">{{tag}}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+        </div>
+
+        <div class="tag-container">
+          <h3>Tags</h3>
+            <ul>
+                <li ng-repeat="tag in loadingBay[post].tags">
+                    <a href="https://www.flickr.com/photos/tags/{{tag}}">{{tag}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="g-plusone" data-annotation="inline" data-width="300"></div>
     </div>
 </div>

@@ -1,34 +1,24 @@
-<h2 class="text-center">App Task</h2>
-
-<div class="title-container">
-	<h1>Flickr Public Feed</h1>
+<div class="top-container">
+	<div class="title-container">
+		<h1>Flickr Public Feed</h1>
+	</div>
+	<form>
+		<input placeholder="Search by tags..." ng-keydown="loadMore(true)" ng-keyup="shouldFilter = true"  ng-model="search" type="search">
+	</form>
 </div>
-<form>
-	<input ng-keypress="shouldFilter = true"  ng-model="search" type="search">
-</form>
+
 <div class="feed-container" scroll>
 	<div class="item-container animation" ng-repeat="(key, value) in items | filter: (shouldFilter ?  {tagString : search} : '')">
+		<div class="image-container">
+			<a href="/#/post/#{{key}}"><img src={{value.media.m}} alt=""></a>
+		</div>
 		<div class="info-container">
-			<h1><a class="title-link" href=/#/post/#{{key}}>{{value.title}}</a></h1>
+			<h2><a ng-click="$window.scrollTo(0, 0);" class="title-link" href=/#/post/#{{key}}>{{value.title}}</a></h2>
+			<p>Published: {{ value.date_taken | date:'d' | ordinal}} {{ value.date_taken | date : "MMM yyyy 'at 'HH:mm" }}</p>
 			<ul>
-				<li><a href="">{{value.author}}</a></li>
-				<li>Published: {{ value.date_taken | date:'d' | ordinal}} {{ value.date_taken | date : "MMM yyyy 'at 'HH:mm" }}</li>
-				<!-- <p>Date = {{ "2016-01-05T09:05:05.035Z" | date }}</p> -->
+				<li><a href="https://www.flickr.com/photos/{{value.author_id}}" target="_blank">{{value.author[1]}}</a></li>
+				<li><a href="{{value.link}}"target="_blank">View on Flickr</a></li>
 			</ul>
-		</div>
-		<div class="content-container">
-			<div class="image-container">
-				<img src={{value.media.m}} alt="">
-			</div>
-		</div>
-		<h3>Tags</h3>
-		<div class="tag-container">
-				<p>Tags</p>
-				<ul>
-					<li ng-repeat="tag in value.tags">
-						<a href="https://www.flickr.com/photos/tags/{{tag}}">{{tag}}</a>
-					</li>
-				</ul>
 		</div>
 	</div>
 

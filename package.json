@@ -1,8 +1,8 @@
 {
-  "name": "angularjs-boilerplate",
-  "version": "1.1.7",
+  "name": "app-task",
+  "version": "1.1.1",
   "license": "MIT",
-  "description": "Simple AngularJS Boilerplate to kick start your new project with SASS support and Gulp watch/build tasks",
+  "description": "Flickr Public Feed",
   "main": "app/app.js",
   "devDependencies": {
     "browser-sync": "^1.9.1",
@@ -42,18 +42,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbutko/AngularJS-Boilerplate.git"
+    "url": "https://github.com/fenderface66/app-task.git"
   },
   "keywords": [
     "front-end",
     "app",
     "single-page",
-    "spa"
+    "flickr"
   ],
-  "author": "Jozef Butko",
+  "author": "Robbie Heygate",
   "docs": "https://github.com/jbutko/AngularJS-Boilerplate/blob/master/README.md",
-  "bugs": {
-    "url": "https://github.com/jbutko/AngularJS-Boilerplate/issues"
-  },
-  "homepage": "https://github.com/jbutko/AngularJS-Boilerplate"
 }

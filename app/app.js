@@ -17,8 +17,8 @@
                 return input + (s[(v - 20) % 10] || s[v] || s[0]);
             }
         })
-    // safe dependency injection
-    // this prevents minification issues
+        // safe dependency injection
+        // this prevents minification issues
     config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$compileProvider'];
 
     /**
@@ -94,22 +94,4 @@
             }
         };
     }
-
-
-    /**
-     * Run block
-     */
-    angular
-        .module('app-task')
-        .run(run);
-
-    run.$inject = ['$rootScope', '$location'];
-
-    function run($rootScope, $location) {
-
-        // put here everything that you need to run on page load
-
-    }
-
-
 })();
