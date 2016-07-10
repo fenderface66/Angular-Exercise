@@ -180,7 +180,7 @@ RESPONSIVE NAV
 	&:focus {
 		text-decoration: none;
 	}
-	
+
 	&:before {
 		content:'\2261';
 		font-size: 24px;
@@ -223,6 +223,14 @@ MAIN PAGE
 		width: 100%;
 	}
 }
+
+/*********************
+Flickr Feed
+*********************/
+.feed-container {
+	padding: 40px 0;
+}
+
 
 /*********************
 FOOTER STYLES

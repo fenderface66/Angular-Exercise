@@ -7,7 +7,7 @@
      */
     angular
         .module('app-task', [
-            'ngRoute'
+            'ngRoute', 'ngAnimate'
         ])
         .config(config)
         .filter('ordinal', function() {
@@ -17,21 +17,6 @@
                 return input + (s[(v - 20) % 10] || s[v] || s[0]);
             }
         })
-        // .filter('getById', function() {
-        //     return function(input, id) {
-        //         var i = 0,
-        //             len = input.length;
-        //         for (; i < len; i++) {
-        //
-        //             if (+input[i].id == +id) {
-        //               console.log(input[i]);
-        //                 return input[i];
-        //             }
-        //         }
-        //         return null;
-        //     }
-        // });
-
     // safe dependency injection
     // this prevents minification issues
     config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$compileProvider'];
