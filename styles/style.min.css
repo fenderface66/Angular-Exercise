@@ -149,6 +149,7 @@ a:link,a:visited:link{-webkit-tap-highlight-color:rgba(0,0,0,.3)}
 .post-container .image-container{width:100%}
 .post-container .tag-container h3{margin:0 0 2px}
 .post-container .tag-container li{display:inline-block;margin:4px 5px}
+.post-container .tag-container a{text-decoration:underline}
 .post-container .back{background-color:#eaedf2;padding:5px 15px;border-radius:6px;position:absolute;display:block;top:5px;right:0;transition:.2s;margin-bottom:20px}
 .post-container .back:hover{background-color:#d7d9de}
 .footer{background-color:#231f20;color:#f8f9fa}

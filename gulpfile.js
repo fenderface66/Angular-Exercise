@@ -185,7 +185,7 @@ gulp.task('usemin', function() {
     return gulp.src('./index.html')
         // add templates path
         .pipe($.htmlReplace({
-            'templates': '<script type="text/javascript" src="js/templates.js"></script>'
+            'templates': '<script type="text/javascript" src="./js/templates.js"></script>'
         }))
         .pipe($.usemin({
             css: [$.minifyCss(), 'concat'],

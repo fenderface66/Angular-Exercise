@@ -8,7 +8,7 @@ npm install
 ```bash
 gulp build
 ```
-3) To begin gulp development process run
+3) To begin gulp development process or view app locally run
 ```bash
 gulp
 ```
