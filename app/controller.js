@@ -10,19 +10,20 @@
 
     function MainController(LocalStorage, FlickrData, $scope, $location, $window) {
         var self = this;
-        ////////////  function definitions
+        //Create query params
         var request = {
             tags: "potato",
             tagmode: "all",
             format: "json",
             jsoncallback: "JSON_CALLBACK"
         }
+        //Store scope variables
         $scope.disableFilter = '';
         $scope.items = [];
         $scope.loadingBay = [];
         $scope.tags = [];
         $scope.post = $location.hash();
-
+        //Call query service with Flickr url
         FlickrData.query('JSONP', '/services/feeds/photos_public.gne', request, {})
             .then(function(obj) {
                 $scope.obj = obj.data;
@@ -41,11 +42,14 @@
 
             })
         $scope.filtered = false;
+        //Adds more objects to $scope items once scroll directive is used or search filter
         $scope.loadMore = function loadMore(all) {
             var counter = 0;
+            //If either search is being used for first time or scroll directive is being used
             if (all === true && $scope.filtered === false || all !== true) {
                 angular.forEach($scope.loadingBay, function(value, key) {
                     counter++;
+                    //Push 1 item into $scope.items for ng-repeat
                     if (all !== true && $scope.filtered === false) {
                         if (key === $scope.items.length && counter < 2) {
                             this.push(value);
@@ -53,6 +57,7 @@
                         } else {
                             counter = 0;
                         }
+                    //Push all items into $scope.items for tag search to run against  
                     } else if (all === true) {
                         console.log('hello');
                         if (key === $scope.items.length + 1) {

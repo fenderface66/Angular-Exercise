@@ -8,7 +8,7 @@
 
 
     function scroll($window) {
-        // Definition of directive
+        // Collect doc height and compare to windowHeight + window.pageYOffset
         return function(scope, element, attrs) {
             angular.element($window).bind("scroll", function() {
                 var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
