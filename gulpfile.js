@@ -152,10 +152,6 @@ gulp.task('sass:build', function() {
             html: ['./index.html', './views/**/*.html', './components/**/*.html'],
             ignore: [
                 '.index',
-                '.slick',
-                /\.owl+/,
-                /\.owl-next/,
-                /\.owl-prev/
             ]
         }))
         .pipe($.minifyCss({
@@ -202,7 +198,6 @@ gulp.task('usemin', function() {
 gulp.task('templates', function() {
     return gulp.src([
             './**/*.html',
-            '!bower_components/**/*.*',
             '!node_modules/**/*.*',
             '!_build/**/*.*'
         ])

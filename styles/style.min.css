@@ -127,7 +127,7 @@ a:link,a:visited:link{-webkit-tap-highlight-color:rgba(0,0,0,.3)}
 .container .feed-container .image-container,.container .feed-container .info-container{float:none}
 .container .feed-container .image-container{margin:auto;width:80%}
 .container .feed-container .info-container{text-align:center;width:100%}
-.container .item-container{margin:30px 5px;padding-bottom:30px;overflow-x:hidden;border-bottom:1px solid #5c6b80}
+.container .item-container{margin:30px 5px;padding-bottom:30px;overflow-x:hidden;border-bottom:2px solid #eaedf2}
 .container .item-container:first-child{margin-top:0}
 .container .item-container:last-child{margin-bottom:0;border-bottom:0;padding-bottom:0}
 .container .image-container{width:30%;margin-right:4%;padding-top:5px}
